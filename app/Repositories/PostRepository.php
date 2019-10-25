@@ -7,7 +7,7 @@ use App\Entities\Post;
 class PostRepository
 {
     public function index(){
-        return Post::with('user')->get();
+        return Post::with('user')->join('users','posts.user_id','users.id')->select('posts.*','users.name')->get();
     }
 
     public function find($id){

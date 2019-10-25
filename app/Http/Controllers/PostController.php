@@ -24,7 +24,6 @@ class PostController extends Controller
     public function show($id){
         $post = $this->postRepo->find($id);
         return view('post.show',['post'=>$post]); 
-
     }
 
     // 發表文章
